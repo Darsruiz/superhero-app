@@ -7,8 +7,8 @@ import { ISuperhero } from '../interfaces/super-hero.interface';
 })
 export class SuperheroService {
   private superheroes: ISuperhero[] = [
-    {id: 1, name: 'Superhero', power:'Power'}
-    {id: 2, name: 'Superhero 2', power:'Power 2'}
+    {id: 1, name: 'Superhero', power:'Power'},
+    {id: 2, name: 'Superhero 2', power:'Power 2'},
     {id: 3, name: 'Superhero 3', power:'Power 3'}
   ];
 
