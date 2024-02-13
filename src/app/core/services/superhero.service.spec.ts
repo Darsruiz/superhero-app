@@ -11,7 +11,6 @@ describe('SuperheroService', () => {
     });
     service = TestBed.inject(SuperheroService);
 
-    // Initialize with some superheroes
     service['superheroes'] = [
       { id: 1, name: 'Superman', power: 'Flight' },
       { id: 2, name: 'Batman', power: 'Wealth' }
