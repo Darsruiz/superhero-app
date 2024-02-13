@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>{{data.id ? 'Edit Superhero' : 'Add Superhero'}}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="superheroForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" appUppercase>
+      <mat-error *ngIf="superheroForm.get('name')?.errors?.['required']">
+        Name is required
+      </mat-error>
+      <mat-error *ngIf="superheroForm.get('name')?.errors?.['minlength']">
+        Name must be at least 3 characters long
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Power</mat-label>
+      <input matInput formControlName="power">
+      <mat-error *ngIf="superheroForm.get('power')?.errors?.['required']">
+        Power is required
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="onSaveClick()" [disabled]="!superheroForm.valid">Save</button>
+</div>
